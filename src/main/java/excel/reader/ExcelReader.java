@@ -18,8 +18,17 @@ public class ExcelReader {
             // Getting the first sheet
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            
-
+            // Iterating through each row in the Excel sheet
+            for(Row row : sheet) {
+                // Iterating through each cell in the rows
+                for(Cell cell : row) {
+                    // Printing the cell value
+                    System.out.print(cell.toString() + "\t");
+                }
+                System.out.println();
+            }
+            // Closing the output stream
+            file.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
