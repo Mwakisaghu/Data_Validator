@@ -15,6 +15,11 @@ public class ExcelReader {
             FileInputStream file = new FileInputStream(new File(filePath));
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
+            // Getting the first sheet
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
